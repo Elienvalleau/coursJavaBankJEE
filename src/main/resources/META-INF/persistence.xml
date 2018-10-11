@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
+    <persistence-unit name="mybankjpa">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <class>fr.ynov.m1.valleau_elien.bank_projectv2.modele.Utilisateur</class>
+        <class>fr.ynov.m1.valleau_elien.bank_projectv2.modele.Compte</class>
+        <class>fr.ynov.m1.valleau_elien.bank_projectv2.modele.Transaction</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/mybankjpa?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useSSL=false&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC" />
+            <property name="javax.persistence.jdbc.user" value="bank" />
+            <property name="javax.persistence.jdbc.password" value="bank" />
+
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <!--<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect"/>-->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+        </properties>
+    </persistence-unit>
+</persistence>
