@@ -7,10 +7,12 @@ import fr.ynov.m1.valleau_elien.bank_projectv2.modele.Utilisateur;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
-//à recup avec Maven
-//Logger logger = LogManager.getLogger(LoginServlet.class);
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 public class UtilisateurManager extends BaseManager{
+
+    private static final Logger logger = LogManager.getLogger(UtilisateurManager.class);
 
     public static void saveUtilisateur(Utilisateur utilisateur) {
         EntityManager em = getEntityManager();
@@ -34,12 +36,16 @@ public class UtilisateurManager extends BaseManager{
 
         //pour aller chercher les comptes
         for(Compte compte:utilisateur.getComptes()){
-            System.out.println(compte.getId_compte());
+//            System.out.println(compte.getId_compte());
+            logger.trace(compte.getId_compte());
 
             for (Transaction transac:compte.getTransactions()){
-                System.out.println(transac.getId_transaction());
+//                System.out.println(transac.getId_transaction());
+                logger.trace(transac.getId_transaction());
             }
         }
+
+//        logger.error("error");
 
         return utilisateur;
     }
