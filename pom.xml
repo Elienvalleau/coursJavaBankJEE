@@ -7,7 +7,7 @@
     <groupId>java.fr.ynov.m1.valleau_elien.bank_projectv2</groupId>
     <artifactId>bankProjectV2</artifactId>
     <version>1.0-SNAPSHOT</version>
-
+    <packaging>war</packaging>
     <dependencies>
         <dependency>
             <groupId>mysql</groupId>
@@ -72,6 +72,12 @@
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
             <version>2.11.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
         </dependency>
 
     </dependencies>
