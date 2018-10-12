@@ -7,6 +7,9 @@ import fr.ynov.m1.valleau_elien.bank_projectv2.modele.Utilisateur;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
+//à recup avec Maven
+//Logger logger = LogManager.getLogger(LoginServlet.class);
+
 public class UtilisateurManager extends BaseManager{
 
     public static void saveUtilisateur(Utilisateur utilisateur) {
