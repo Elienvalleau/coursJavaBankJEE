@@ -22,8 +22,8 @@ class UtilisateurManagerTest extends UtilisateurManager{
         luckyLuke.setNom("Luke");
         luckyLuke.setPrenom("Lucky");
         luckyLuke.setEmail("luckyluke@jetireplusvitequemonombre.org");
-        luckyLuke.setLogin("mySuperLogin");
-        luckyLuke.setPassword("mySuperPassword");
+        luckyLuke.setLogin("test");
+        luckyLuke.setPassword("test");
         luckyLuke.setPhone("06.12.13.14.15");
         SimpleDateFormat isoFormat = new SimpleDateFormat("dd-MM-yyyy'T'HH:mm:ss");
         isoFormat.setTimeZone(TimeZone.getTimeZone("UTC+2"));
@@ -41,8 +41,8 @@ class UtilisateurManagerTest extends UtilisateurManager{
         luckyLuke.setNom("Luke");
         luckyLuke.setPrenom("Lucky");
         luckyLuke.setEmail("luckyluke@jetireplusvitequemonombre.org");
-        luckyLuke.setLogin("mySuperLogin");
-        luckyLuke.setPassword("mySuperPassword");
+        luckyLuke.setLogin("test");
+        luckyLuke.setPassword("test");
         luckyLuke.setPhone("06.12.13.14.15");
         SimpleDateFormat isoFormat = new SimpleDateFormat("dd-MM-yyyy'T'HH:mm:ss");
         isoFormat.setTimeZone(TimeZone.getTimeZone("UTC+2"));
@@ -61,8 +61,8 @@ class UtilisateurManagerTest extends UtilisateurManager{
         luckyLuke.setId_utilisateur(1);
         luckyLuke.setNom("Luke");
         luckyLuke.setPrenom("Lucky");
-        luckyLuke.setLogin("mySuperLogin");
-        luckyLuke.setPassword("mySuperPassword");
+        luckyLuke.setLogin("test");
+        luckyLuke.setPassword("test");
         luckyLuke.setPhone("06.12.13.14.15");
         SimpleDateFormat isoFormat = new SimpleDateFormat("dd-MM-yyyy'T'HH:mm:ss");
         isoFormat.setTimeZone(TimeZone.getTimeZone("UTC+2"));

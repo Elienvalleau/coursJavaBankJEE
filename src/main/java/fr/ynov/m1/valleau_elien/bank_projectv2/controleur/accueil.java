@@ -29,6 +29,9 @@ public class accueil extends HttpServlet {
         Utilisateur utilisateur = UtilisateurManager.loadUtilisateurByLoginAndPassword(login, password);
         if (utilisateur == null) {
             request.setAttribute("errorMsg", "Cette combinaison utilisateur - mot de passe n'existe pas");
+            Date date = new Date();
+            String today = date.toString();
+            request.setAttribute( "date", today );
             dispatcher.forward(request, response);
         } else  {
             request.getSession().setAttribute("utilisateur", utilisateur);
