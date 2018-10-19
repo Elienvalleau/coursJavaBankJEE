@@ -7,6 +7,18 @@
     <groupId>java.fr.ynov.m1.valleau_elien.bank_projectv2</groupId>
     <artifactId>bankProjectV2</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>6</source>
+                    <target>6</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
     <packaging>war</packaging>
     <dependencies>
         <dependency>

@@ -17,6 +17,7 @@
     <c:forEach items="${utilisateur.getComptes()}" var="compte">
         <c:forEach items="${compte.getTransactions()}" var="transaction">
             <c:if test="${param.idTransac==transaction.getId_transaction()}">
+                <a href="/detailsCompte?idCompte=${transaction.getLeSuperCompte().getId_compte()}"><-----</a> <br>
                 ${transaction.getLibelle()} <br>
                 ${transaction.getMontant()} <br>
                 ${transaction.getCpt_source()} <br>

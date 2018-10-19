@@ -26,7 +26,7 @@
             <input type="password" name="password" id="password" required/>
         </p>
         <c:if test="${requestScope.errorMsg!=null}">
-            ${requestScope.errorMsg}
+            <fmt:message key = "${requestScope.errorMsg}"/>
         </c:if>
         <p>
             <input type="submit" value=<fmt:message key = "valid"/> />

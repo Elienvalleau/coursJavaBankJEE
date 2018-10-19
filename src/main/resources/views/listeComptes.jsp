@@ -16,8 +16,21 @@
     <p><fmt:message key = "welcome_msg"/><c:out value=" ${utilisateur.getPrenom()} ${utilisateur.getNom()}" /></p>
     <h2><fmt:message key = "list_account"/></h2>
     <c:forEach items="${utilisateur.getComptes()}" var="compte">
-        ${compte.getTypecpt()} <button><a href="/detailsCompte?idCompte=${compte.getId_compte()}"><fmt:message key = "see_more"/></a></button> <br>
+        <fmt:message key="account.${compte.getTypecpt()}" /> : ${compte.getSolde()}  <fmt:message key = "devise"/> <button><a href="/detailsCompte?idCompte=${compte.getId_compte()}"><fmt:message key = "see_more"/></a></button> <br>
     </c:forEach>
+    <br> <br>
+
+    <h3><fmt:message key = "createAccount"/></h3>
+    <form method="post" action="${pageContext.request.contextPath}/listeComptes">
+        <label for="accountType"><fmt:message key = "accountType"/></label><br />
+        <select id="accountType" name="accountType">
+            <option value="1" selected><fmt:message key="account.1" /></option>
+            <option value="2"><fmt:message key="account.2" /></option>
+            <option value="3"><fmt:message key="account.3" /></option>
+        </select>
+        <input type="submit" value=<fmt:message key = "valid"/> />
+    </form>
+
 </body>
 <br>
 <li><a href="?lang=en"><fmt:message key="lang.en" /></a></li>

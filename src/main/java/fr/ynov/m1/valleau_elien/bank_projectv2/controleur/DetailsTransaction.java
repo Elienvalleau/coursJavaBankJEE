@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet("/detailsTransaction")
-public class detailsTransaction extends HttpServlet{
+public class DetailsTransaction extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/classes/views/detailsTransaction.jsp");

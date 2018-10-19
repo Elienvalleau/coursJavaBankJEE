@@ -5,7 +5,7 @@
          version="4.0">
     <servlet>
         <servlet-name>accueil</servlet-name>
-        <servlet-class>fr.ynov.m1.valleau_elien.bank_projectv2.controleur.accueil</servlet-class>
+        <servlet-class>fr.ynov.m1.valleau_elien.bank_projectv2.controleur.Accueil</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>accueil</servlet-name>
