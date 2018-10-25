@@ -13,7 +13,7 @@ import java.io.IOException;
 public class DetailsTransaction extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/classes/views/detailsTransaction.jsp");
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/classes/WEB-INF/views/detailsTransaction.jsp");
         Utilisateur utilisateur = (Utilisateur) request.getSession().getAttribute("utilisateur");
         request.setAttribute( "utilisateur", utilisateur );
         dispatcher.forward(request, response);

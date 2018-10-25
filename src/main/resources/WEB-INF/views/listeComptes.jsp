@@ -30,7 +30,12 @@
         </select>
         <input type="submit" value=<fmt:message key = "valid"/> />
     </form>
-
+    <br> <br>
+    <c:if test="${requestScope.confirmMsg!=null}">
+        <fmt:message key = "${requestScope.confirmMsg}"/>
+    </c:if> <br>
+    <button><a href="/changePass"><fmt:message key = "change_pass"/></a></button>
+    <br> <br>
 </body>
 <br>
 <li><a href="?lang=en"><fmt:message key="lang.en" /></a></li>

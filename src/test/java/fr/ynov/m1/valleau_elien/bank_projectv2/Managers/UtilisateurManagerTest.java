@@ -117,24 +117,4 @@ class UtilisateurManagerTest extends UtilisateurManager{
         saveUtilisateur(luckyLuke);
     }
 
-//    @Test
-//    public final void deleteUtilisateurTest() throws ParseException {
-//        Utilisateur luckyLuke = new Utilisateur();
-//        luckyLuke.setNom("Lukev2");
-//        luckyLuke.setPrenom("Luckyv2");
-//        luckyLuke.setEmail("luckylukev2@jetireplusvitequemonombre.org");
-//        luckyLuke.setLogin("mySuperLoginv2");
-//        luckyLuke.setPassword("mySuperPasswordv2");
-//        luckyLuke.setPhone("06.12.13.14.51");
-//        luckyLuke.setAddress("encore plus loin");
-////        SimpleDateFormat isoFormat = new SimpleDateFormat("dd-MM-yyyy'T'HH:mm:ss");
-////        isoFormat.setTimeZone(TimeZone.getTimeZone("UTC+2"));
-////        Date uDate = isoFormat.parse("07-12-1946T09:00:00");
-////        luckyLuke.setDate_of_birth(uDate);
-//        luckyLuke.setId_utilisateur(6);
-//
-//        deleteUtilisateur(luckyLuke);
-//
-//    }
-
 }

@@ -16,13 +16,13 @@ public class Accueil extends HttpServlet {
         Date date = new Date();
         String today = date.toString();
         request.setAttribute( "date", today );
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/classes/views/accueil.jsp");
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/classes/WEB-INF/views/accueil.jsp");
         dispatcher.forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/classes/views/accueil.jsp");
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/classes/WEB-INF/views/accueil.jsp");
         String login = request.getParameter("login");
         String password = request.getParameter("password");
 

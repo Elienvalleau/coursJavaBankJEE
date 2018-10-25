@@ -18,7 +18,7 @@ import java.util.Date;
 public class ListeComptes extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/classes/views/listeComptes.jsp");
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/classes/WEB-INF/views/listeComptes.jsp");
         Utilisateur utilisateur = (Utilisateur) request.getSession().getAttribute("utilisateur");
         request.setAttribute( "utilisateur", utilisateur );
         dispatcher.forward(request, response);
@@ -35,7 +35,8 @@ public class ListeComptes extends HttpServlet {
         compte.setRobert(utilisateur);
         CompteManager.saveCompte(compte);
 
-        Utilisateur utilisateur2 = UtilisateurManager.loadUtilisateurByLoginAndPassword(utilisateur.getLogin(), utilisateur.getPassword());
+//        Utilisateur utilisateur2 = UtilisateurManager.loadUtilisateurByLoginAndPassword(utilisateur.getLogin(), utilisateur.getPassword());
+        Utilisateur utilisateur2 = UtilisateurManager.loadUtilisateurById(utilisateur.getId_utilisateur());
         request.getSession().setAttribute("utilisateur", utilisateur2);
         request.getSession().setMaxInactiveInterval(120);
 

@@ -70,5 +70,4 @@ public class UtilisateurManager extends BaseManager{
         em.remove(utilisateur);
         em.getTransaction().commit();
     }
-
 }
