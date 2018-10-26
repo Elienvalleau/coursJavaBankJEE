@@ -18,11 +18,15 @@ public class ConnectionFilter implements Filter {
         HttpServletResponse response = (HttpServletResponse) res;
         HttpSession session = request.getSession(false);
         String loginURI = request.getContextPath() + "/accueil";
+        String restUrl = request.getContextPath() + "/solde";
+        String restUrlTransaction = request.getContextPath() + "/newTransaction";
 
         boolean loggedIn = session != null && session.getAttribute("utilisateur") != null;
         boolean loginRequest = request.getRequestURI().equals(loginURI);
+        boolean restSolde = request.getRequestURI().equals(restUrl);
+        boolean restTransaction = request.getRequestURI().equals(restUrlTransaction);
 
-        if (loggedIn || loginRequest) {
+        if (loggedIn || loginRequest || restSolde || restTransaction) {
             chain.doFilter(request, response);
         } else {
             response.sendRedirect(loginURI);

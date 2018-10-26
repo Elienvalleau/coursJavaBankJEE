@@ -13,14 +13,14 @@
     <title><fmt:message key = "account_details"/></title>
 </head>
 <body>
-
     <h2><fmt:message key = "account_details"/></h2>
 
     <c:forEach items="${utilisateur.getComptes()}" var="compte">
         <c:if test="${param.idCompte==compte.getId_compte()}">
             <a href="/listeComptes"><-----</a> <br>
             <fmt:message key="account.${compte.getTypecpt()}" /><br>
-            ${compte.getSolde()} <fmt:message key = "devise"/><br>
+            <%--${compte.getSolde()} <fmt:message key = "devise"/><br>--%>
+            ${solde} <fmt:message key = "devise"/><br>
             ${compte.getDate_creation()} <br>
             <br>
             <c:forEach items="${compte.getTransactions()}" var="transaction">

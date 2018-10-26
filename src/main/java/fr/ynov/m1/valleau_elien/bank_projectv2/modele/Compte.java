@@ -1,5 +1,7 @@
 package fr.ynov.m1.valleau_elien.bank_projectv2.modele;
 
+import javax.json.Json;
+import javax.json.JsonObject;
 import javax.persistence.*;
 import java.util.Date;
 import java.util.LinkedHashSet;
@@ -65,6 +67,12 @@ public class Compte {
 
     public void setRobert(Utilisateur robert) {
         this.robert = robert;
+    }
+
+    public JsonObject soldeToJson() {
+        return Json.createObjectBuilder()
+                .add("solde", this.getSolde().toString())
+                .build();
     }
 }
 

@@ -19,8 +19,8 @@ public class ListeComptes extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/classes/WEB-INF/views/listeComptes.jsp");
-        Utilisateur utilisateur = (Utilisateur) request.getSession().getAttribute("utilisateur");
-        request.setAttribute( "utilisateur", utilisateur );
+//        Utilisateur utilisateur = (Utilisateur) request.getSession().getAttribute("utilisateur");
+//        request.setAttribute( "utilisateur", utilisateur );
         dispatcher.forward(request, response);
     }
 
