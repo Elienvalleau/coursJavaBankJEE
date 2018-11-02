@@ -14,30 +14,31 @@ public class PasswordManager extends BaseManager{
                 if(password.matches("(.*[A-Z].*)")) {
                     if(password.matches("(.*[^ \\w].*)")) {
                         if(password.matches("(.*[À-ÿ].*)")) {
-                            logger.debug("errAccent");
+                            logger.error("error check password : errAccent");
                             return "errAccent";
                         }
                         else {
+                            logger.info("ok password");
                             return "passed";
                         }
                     }
                     else{
-                        logger.debug("errSpe");
+                        logger.error("error check password : errSpe");
                         return "errSpe";
                     }
                 }
                 else {
-                    logger.debug("errMaj");
+                    logger.error("error check password : errMaj");
                     return "errMaj";
                 }
             }
             else {
-                logger.debug("errNumber");
+                logger.error("error check password : errNumber");
                 return "errNumber";
             }
         }
         else {
-            logger.debug("errChar");
+            logger.error("error check password : errChar");
             return "errChar";
         }
     }
@@ -47,6 +48,6 @@ public class PasswordManager extends BaseManager{
         em.getTransaction().begin();
         em.merge(utilisateur);
         em.getTransaction().commit();
-        logger.debug(utilisateur);
+        logger.info("Mot de passe mis à jour pour utilisateur : " + utilisateur.toString());
     }
 }

@@ -1,17 +1,11 @@
 package fr.ynov.m1.valleau_elien.bank_projectv2.Managers;
 
-import fr.ynov.m1.valleau_elien.bank_projectv2.modele.Compte;
-import fr.ynov.m1.valleau_elien.bank_projectv2.modele.Transaction;
 import fr.ynov.m1.valleau_elien.bank_projectv2.modele.Utilisateur;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
-
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class UtilisateurManager extends BaseManager{
 
@@ -21,12 +15,14 @@ public class UtilisateurManager extends BaseManager{
         EntityManager em = getEntityManager();
         em.getTransaction().begin();
         em.persist(utilisateur);
+        logger.info("Nouvel utilisateur : " + utilisateur.toString());
         em.getTransaction().commit();
     }
 
     public static Utilisateur loadUtilisateurById(Integer utilisateurId) {
         EntityManager em = getEntityManager();
         Utilisateur user = em.find(Utilisateur.class, utilisateurId);
+        logger.info("Utilisateur chargé : " + utilisateurId.toString());
         return user;
     }
 
@@ -36,21 +32,12 @@ public class UtilisateurManager extends BaseManager{
                 "SELECT u FROM Utilisateur u WHERE u.login='" + login +
                    "'and u.password='" + password + "'", Utilisateur.class);
         if (query.getResultList().isEmpty()){
+            logger.error("Utilisateur introuvable : " + login);
             return null;
         }
         Utilisateur utilisateur = query.getSingleResult();
-//        //pour aller chercher les comptes
-//        for(Compte compte:utilisateur.getComptes()){
-////            System.out.println(compte.getId_compte());
-//            logger.trace(compte.getId_compte());
-//
-//            for (Transaction transac:compte.getTransactions()){
-////                System.out.println(transac.getId_transaction());
-//                logger.trace(transac.getId_transaction());
-//            }
-//        }
 
-//        logger.error("error");
+        logger.info("Utilisateur chargé : " + utilisateur.toString());
 
         return utilisateur;
     }
@@ -68,6 +55,7 @@ public class UtilisateurManager extends BaseManager{
         EntityManager em = getEntityManager();
         em.getTransaction().begin();
         em.remove(utilisateur);
+        logger.info("Utilisateur supprimé : " + utilisateur.toString());
         em.getTransaction().commit();
     }
 }

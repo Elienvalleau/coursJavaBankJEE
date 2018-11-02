@@ -14,6 +14,6 @@ public class TransactionManager extends BaseManager{
         em.getTransaction().begin();
         em.persist(transaction);
         em.getTransaction().commit();
-        logger.debug(transaction);
+        logger.info("Nouvelle transaction : " + transaction.toString());
     }
 }
