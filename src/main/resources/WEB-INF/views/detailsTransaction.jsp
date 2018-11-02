@@ -5,6 +5,7 @@
     <div class="col-md-1 offset-md-11">
         <a href="?idTransac=${param.idTransac}&lang=en"><img src="https://images-na.ssl-images-amazon.com/images/I/41cfK9pPRpL._SX355_.jpg" alt=<fmt:message key="lang.en" /> class="img-circle" width="22" height="19"/></a>
         <a href="?idTransac=${param.idTransac}&lang=fr"><img src="https://images-na.ssl-images-amazon.com/images/I/21EAOCdUbKL._SX355_.jpg" alt=<fmt:message key="lang.fr" /> class="img-circle" width="22" height="19"/></a>
+        <br><br><a href="${pageContext.request.contextPath}/deco"><button><fmt:message key="deco"/></button></a>
     </div>
 
     <div class="col-md-4 offset-md-4 bg-light">
@@ -13,7 +14,7 @@
             <c:forEach items="${utilisateur.getComptes()}" var="compte">
                 <c:forEach items="${compte.getTransactions()}" var="transaction">
                     <c:if test="${param.idTransac==transaction.getId_transaction()}">
-                        <a href="/detailsCompte?idCompte=${transaction.getLeSuperCompte().getId_compte()}"><img src="http://cdn.onlinewebfonts.com/svg/img_225291.png" alt="arrowLeft" height="15px"></a> <br>
+                        <a href="${pageContext.request.contextPath}/detailsCompte?idCompte=${transaction.getLeSuperCompte().getId_compte()}"><img src="http://cdn.onlinewebfonts.com/svg/img_225291.png" alt="arrowLeft" height="15px"></a> <br>
                         <tr>
                             <td>${transaction.getLibelle()}</td>
                         </tr>
@@ -33,7 +34,6 @@
                 </c:forEach>
             </c:forEach>
         </table>
-
     </div>
 </body>
 </html>

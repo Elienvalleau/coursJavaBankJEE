@@ -5,6 +5,7 @@
     <div class="col-md-1 offset-md-11">
         <a href="?lang=en"><img src="https://images-na.ssl-images-amazon.com/images/I/41cfK9pPRpL._SX355_.jpg" alt=<fmt:message key="lang.en" /> class="img-circle" width="22" height="19"/></a>
         <a href="?lang=fr"><img src="https://images-na.ssl-images-amazon.com/images/I/21EAOCdUbKL._SX355_.jpg" alt=<fmt:message key="lang.fr" /> class="img-circle" width="22" height="19"/></a>
+        <br><br><a href="${pageContext.request.contextPath}/deco"><button><fmt:message key="deco"/></button></a>
     </div>
 
     <div class="col-md-8 offset-md-2 bg-light">
@@ -34,7 +35,7 @@
                 <fmt:message key = "${requestScope.confirmMsg}"/>
             </div>
         </c:if> <br>
-        <a href="/changePass"><button><fmt:message key = "change_pass"/></button></a>
+        <a href="${pageContext.request.contextPath}/changePass"><button><fmt:message key = "change_pass"/></button></a>
     </div>
 </body>
 </html>
