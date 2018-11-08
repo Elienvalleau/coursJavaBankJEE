@@ -15,7 +15,6 @@ public class UtilisateurManager extends BaseManager{
         EntityManager em = getEntityManager();
         em.getTransaction().begin();
         em.persist(utilisateur);
-        logger.info("Nouvel utilisateur : " + utilisateur.toString());
         em.getTransaction().commit();
     }
 
@@ -42,20 +41,20 @@ public class UtilisateurManager extends BaseManager{
         return utilisateur;
     }
 
-    public static void purgeTable() {
-        EntityManager em = getEntityManager();
-        em.getTransaction().begin();
-        em.createQuery("delete from Transaction").executeUpdate();
-        em.createQuery("delete from Compte").executeUpdate();
-        em.createQuery("delete from Utilisateur").executeUpdate();
-        em.getTransaction().commit();
-    }
-
-    public static void deleteUtilisateur(Utilisateur utilisateur){
-        EntityManager em = getEntityManager();
-        em.getTransaction().begin();
-        em.remove(utilisateur);
-        logger.info("Utilisateur supprimé : " + utilisateur.toString());
-        em.getTransaction().commit();
-    }
+//    public static void purgeTable() {
+//        EntityManager em = getEntityManager();
+//        em.getTransaction().begin();
+//        em.createQuery("delete from Transaction").executeUpdate();
+//        em.createQuery("delete from Compte").executeUpdate();
+//        em.createQuery("delete from Utilisateur").executeUpdate();
+//        em.getTransaction().commit();
+//    }
+//
+//    public static void deleteUtilisateur(Utilisateur utilisateur){
+//        EntityManager em = getEntityManager();
+//        em.getTransaction().begin();
+//        em.remove(utilisateur);
+//        logger.info("Utilisateur supprimé : " + utilisateur.toString());
+//        em.getTransaction().commit();
+//    }
 }

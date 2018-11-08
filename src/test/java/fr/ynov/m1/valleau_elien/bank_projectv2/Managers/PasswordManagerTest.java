@@ -51,12 +51,12 @@ class PasswordManagerTest extends UtilisateurManager{
 
     @Test
     public final void updatePassTest() {
-        Utilisateur utilisateur = loadUtilisateurById(6);
+        Utilisateur utilisateur = loadUtilisateurById(10);
         utilisateur.setPassword("Nouveaumotdepasse7!");
-
+//
         PasswordManager.updatePass(utilisateur);
 
-        Utilisateur utilisateur2 = loadUtilisateurById(6);
+        Utilisateur utilisateur2 = loadUtilisateurById(10);
         assertEquals("Nouveaumotdepasse7!", utilisateur2.getPassword());
     }
 

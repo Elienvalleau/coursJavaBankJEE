@@ -17,8 +17,6 @@ public class ChangePass extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/classes/WEB-INF/views/changePass.jsp");
-//        Utilisateur utilisateur = (Utilisateur) request.getSession().getAttribute("utilisateur");
-//        request.setAttribute( "utilisateur", utilisateur );
         dispatcher.forward(request, response);
     }
 
@@ -38,7 +36,7 @@ public class ChangePass extends HttpServlet {
                     Utilisateur utilisateur2 = UtilisateurManager.loadUtilisateurById(utilisateur.getId_utilisateur());
                     request.getSession().setAttribute("utilisateur", utilisateur2);
                     request.getSession().setMaxInactiveInterval(120);
-                    RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/classes/WEB-INF/views/listeComptes.jsp");
+                    RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/classes/WEB-INF/views/changePass.jsp");
                     request.setAttribute("confirmMsg", "okChangePass");
                     dispatcher.forward(request, response);
                 }

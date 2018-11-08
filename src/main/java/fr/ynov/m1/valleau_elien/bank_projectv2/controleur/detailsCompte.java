@@ -10,6 +10,8 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.ContentType;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.json.JSONObject;
 
 import javax.json.Json;
@@ -28,16 +30,13 @@ import java.util.Date;
 
 @WebServlet("/detailsCompte")
 public class DetailsCompte extends HttpServlet{
+
+    private static final Logger logger = LogManager.getLogger(DetailsCompte.class);
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-//        Utilisateur utilisateur = (Utilisateur) request.getSession().getAttribute("utilisateur");
-//        request.setAttribute( "utilisateur", utilisateur );
-
         String idCompte = request.getParameter("idCompte");
-//        URL url = new URL( "http://"+request.getContextPath() + "/solde?id=" + idCompte);
-//        System.out.println(url);
-
+        //rest api get
         URL url = new URL( "http://localhost:8080/solde?id=" + idCompte);
         BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
         String str = "";
@@ -73,16 +72,7 @@ public class DetailsCompte extends HttpServlet{
                         compte.setSolde(compte.getSolde() - amountTransac);
                         CompteManager.updateCompte(compte);
 
-//                        Transaction transaction = new Transaction();
-//                        transaction.setMontant(amountTransac);
-//                        transaction.setDate(new Date());
-//                        transaction.setLibelle(label);
-//                        transaction.setCpt_source(idCompte);
-//                        transaction.setCpt_dest(idDest);
-//                        transaction.setLeSuperCompte(compte);
-//
-//                        TransactionManager.saveTransaction(transaction);
-
+                        //rest api post
                         JsonObject jsonObject = Json.createObjectBuilder()
                                 .add("montant", amountTransac)
                                 .add("date", String.valueOf(new Date()))
@@ -96,7 +86,7 @@ public class DetailsCompte extends HttpServlet{
                         StringEntity entity = new StringEntity(String.valueOf(jsonObject), ContentType.APPLICATION_FORM_URLENCODED);
                         req.setEntity(entity);
                         HttpResponse res = httpClient.execute(req);
-                        System.out.println(res.getStatusLine().getStatusCode());
+                        logger.info(res.getStatusLine().getStatusCode());
 
                         Utilisateur utilisateur2 = UtilisateurManager.loadUtilisateurById(utilisateur.getId_utilisateur());
 //                        compte.getSolde();

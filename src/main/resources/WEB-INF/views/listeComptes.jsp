@@ -31,11 +31,6 @@
             <input type="submit" value=<fmt:message key = "valid"/> />
         </form>
         <br> <br>
-        <c:if test="${requestScope.confirmMsg!=null}">
-            <div class="alert alert-danger">
-                <fmt:message key = "${requestScope.confirmMsg}"/>
-            </div>
-        </c:if> <br>
         <a href="${pageContext.request.contextPath}/changePass"><button><fmt:message key = "change_pass"/></button></a><br/>
     </div>
 </body>

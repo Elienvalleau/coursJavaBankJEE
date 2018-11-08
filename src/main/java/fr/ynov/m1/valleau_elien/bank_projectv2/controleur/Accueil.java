@@ -22,12 +22,12 @@ public class Accueil extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/classes/WEB-INF/views/accueil.jsp");
         String login = request.getParameter("login");
         String password = request.getParameter("password");
 
         Utilisateur utilisateur = UtilisateurManager.loadUtilisateurByLoginAndPassword(login, password);
         if (utilisateur == null) {
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/classes/WEB-INF/views/accueil.jsp");
             request.setAttribute("errorMsg", "errUserMdp");
             Date date = new Date();
             String today = date.toString();

@@ -19,17 +19,17 @@ class UtilisateurManagerTest extends UtilisateurManager{
     @Test
     public final void saveUtilisateurTest() throws ParseException {
         Utilisateur luckyLuke = new Utilisateur();
-        luckyLuke.setNom("Luke");
-        luckyLuke.setPrenom("Lucky");
+        luckyLuke.setNom("Luke3");
+        luckyLuke.setPrenom("Lucky3");
         luckyLuke.setEmail("luckyluke@jetireplusvitequemonombre.org");
-        luckyLuke.setLogin("test");
-        luckyLuke.setPassword("test");
+        luckyLuke.setLogin("test3");
+        luckyLuke.setPassword("test3");
         luckyLuke.setPhone("06.12.13.14.15");
         SimpleDateFormat isoFormat = new SimpleDateFormat("dd-MM-yyyy'T'HH:mm:ss");
         isoFormat.setTimeZone(TimeZone.getTimeZone("UTC+2"));
         Date uDate = isoFormat.parse("07-12-1946T09:00:00");
         luckyLuke.setDate_of_birth(uDate);
-        luckyLuke.setAddress("loin");
+        luckyLuke.setAddress("loin3");
 
         saveUtilisateur(luckyLuke);
     }
@@ -37,40 +37,39 @@ class UtilisateurManagerTest extends UtilisateurManager{
     @Test
     public final void loadUtilisateurByIdTest() throws ParseException {
         Utilisateur luckyLuke = new Utilisateur();
-        luckyLuke.setId_utilisateur(1);
-        luckyLuke.setNom("Luke");
-        luckyLuke.setPrenom("Lucky");
+        luckyLuke.setId_utilisateur(11);
+        luckyLuke.setNom("Luke3");
+        luckyLuke.setPrenom("Lucky3");
         luckyLuke.setEmail("luckyluke@jetireplusvitequemonombre.org");
-        luckyLuke.setLogin("test");
-        luckyLuke.setPassword("test");
+        luckyLuke.setLogin("test3");
+        luckyLuke.setPassword("test3");
         luckyLuke.setPhone("06.12.13.14.15");
         SimpleDateFormat isoFormat = new SimpleDateFormat("dd-MM-yyyy'T'HH:mm:ss");
         isoFormat.setTimeZone(TimeZone.getTimeZone("UTC+2"));
         Date uDate = isoFormat.parse("07-12-1946T09:00:00");
         luckyLuke.setDate_of_birth(uDate);
-        luckyLuke.setAddress("loin");
+        luckyLuke.setAddress("loin3");
 
-//        assertEquals(luckyLuke, loadUtilisateurById(1));
-//        assertEquals(luckyLuke.getLogin(), loadUtilisateurById(1).getLogin());
-        assertEquals(luckyLuke.getDate_of_birth(), loadUtilisateurById(1).getDate_of_birth());
+        assertEquals(luckyLuke.getNom(), loadUtilisateurById(11).getNom());
     }
 
     @Test
     public final void loadUtilisateurByLoginAndPasswordTest() throws ParseException {
         Utilisateur luckyLuke = new Utilisateur();
-        luckyLuke.setId_utilisateur(1);
-        luckyLuke.setNom("Luke");
-        luckyLuke.setPrenom("Lucky");
-        luckyLuke.setLogin("test");
-        luckyLuke.setPassword("test");
+        luckyLuke.setId_utilisateur(18);
+        luckyLuke.setNom("Luke3");
+        luckyLuke.setPrenom("Lucky3");
+        luckyLuke.setEmail("luckyluke@jetireplusvitequemonombre.org");
+        luckyLuke.setLogin("test14");
+        luckyLuke.setPassword("test14");
         luckyLuke.setPhone("06.12.13.14.15");
         SimpleDateFormat isoFormat = new SimpleDateFormat("dd-MM-yyyy'T'HH:mm:ss");
         isoFormat.setTimeZone(TimeZone.getTimeZone("UTC+2"));
         Date uDate = isoFormat.parse("07-12-1946T09:00:00");
         luckyLuke.setDate_of_birth(uDate);
-        luckyLuke.setAddress("loin");
+        luckyLuke.setAddress("loin3");
 
-        assertEquals(luckyLuke.getPrenom(), loadUtilisateurByLoginAndPassword("mySuperLogin", "mySuperPassword").getPrenom());
+        assertEquals(luckyLuke.getPrenom(), loadUtilisateurByLoginAndPassword("test14", "test14").getPrenom());
     }
 
     @Test
@@ -89,10 +88,6 @@ class UtilisateurManagerTest extends UtilisateurManager{
         luckyLuke.setPassword("mySuperPasswordv2");
         luckyLuke.setPhone("06.12.13.14.51");
         luckyLuke.setAddress("encore plus loin");
-//        SimpleDateFormat isoFormat = new SimpleDateFormat("dd-MM-yyyy'T'HH:mm:ss");
-//        isoFormat.setTimeZone(TimeZone.getTimeZone("UTC+2"));
-//        Date uDate = isoFormat.parse("07-12-1946T09:00:00");
-//        luckyLuke.setDate_of_birth(uDate);
 
         //create transaction
         transaction1.setLeSuperCompte(superCompte);
@@ -110,6 +105,7 @@ class UtilisateurManagerTest extends UtilisateurManager{
         superCompte.setTypecpt(1);
         superCompte.setRobert(luckyLuke);
         superCompte.setTransactions(testTransaction);
+
         //compte to list
         testCompte.add(superCompte);
 

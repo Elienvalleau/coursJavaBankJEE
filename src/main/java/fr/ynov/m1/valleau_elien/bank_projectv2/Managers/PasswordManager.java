@@ -48,6 +48,6 @@ public class PasswordManager extends BaseManager{
         em.getTransaction().begin();
         em.merge(utilisateur);
         em.getTransaction().commit();
-        logger.info("Mot de passe mis à jour pour utilisateur : " + utilisateur.toString());
+        logger.info(em);
     }
 }

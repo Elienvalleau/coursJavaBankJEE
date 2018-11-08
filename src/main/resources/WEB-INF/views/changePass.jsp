@@ -43,6 +43,11 @@
                     <fmt:message key = "${requestScope.errorMsgPassword}"/>
                 </div>
             </c:if>
+            <c:if test="${requestScope.confirmMsg!=null}">
+                <div class="alert alert-danger">
+                    <fmt:message key = "${requestScope.confirmMsg}"/>
+                </div>
+            </c:if> <br>
             <p>
                 <input type="submit" value=<fmt:message key = "valid"/> />
             </p>
