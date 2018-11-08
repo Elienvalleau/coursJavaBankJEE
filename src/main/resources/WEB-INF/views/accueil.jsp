@@ -29,7 +29,7 @@
                 </div>
             </c:if>
             <input type="submit" value=<fmt:message key = "valid"/> />
-        </form>
+        </form><br/>
     </div>
 </body>
 </html>

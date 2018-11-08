@@ -46,7 +46,7 @@
             <p>
                 <input type="submit" value=<fmt:message key = "valid"/> />
             </p>
-        </form>
+        </form><br/>
     </div>
 </body>
 </html>

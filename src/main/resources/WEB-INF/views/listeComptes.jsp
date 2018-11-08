@@ -36,7 +36,7 @@
                 <fmt:message key = "${requestScope.confirmMsg}"/>
             </div>
         </c:if> <br>
-        <a href="${pageContext.request.contextPath}/changePass"><button><fmt:message key = "change_pass"/></button></a>
+        <a href="${pageContext.request.contextPath}/changePass"><button><fmt:message key = "change_pass"/></button></a><br/>
     </div>
 </body>
 </html>

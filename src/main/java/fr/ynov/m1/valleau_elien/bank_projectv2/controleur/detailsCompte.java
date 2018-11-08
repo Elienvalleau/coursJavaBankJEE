@@ -2,6 +2,7 @@ package fr.ynov.m1.valleau_elien.bank_projectv2.controleur;
 import fr.ynov.m1.valleau_elien.bank_projectv2.Managers.CompteManager;
 import fr.ynov.m1.valleau_elien.bank_projectv2.Managers.UtilisateurManager;
 import fr.ynov.m1.valleau_elien.bank_projectv2.modele.Compte;
+import fr.ynov.m1.valleau_elien.bank_projectv2.modele.Transaction;
 import fr.ynov.m1.valleau_elien.bank_projectv2.modele.Utilisateur;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -97,8 +98,10 @@ public class DetailsCompte extends HttpServlet{
                         HttpResponse res = httpClient.execute(req);
                         System.out.println(res.getStatusLine().getStatusCode());
 
-//                        Utilisateur utilisateur2 = UtilisateurManager.loadUtilisateurByLoginAndPassword(utilisateur.getLogin(), utilisateur.getPassword());
                         Utilisateur utilisateur2 = UtilisateurManager.loadUtilisateurById(utilisateur.getId_utilisateur());
+//                        compte.getSolde();
+//                        compte.getTransactions();
+
                         request.getSession().setAttribute("utilisateur", utilisateur2);
                         request.getSession().setMaxInactiveInterval(120);
 
